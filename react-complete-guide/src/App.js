@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 // Component name should be capitalized because in JSX all elements starting
 // with lowercase characteres are reserved for the native HTML elements.
-import Radium from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -57,11 +56,7 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      cursor: 'pointer'
     };
 
     let persons = null;
@@ -81,10 +76,6 @@ class App extends Component {
       );
 
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      };
     }
 
     const classes = [];
@@ -108,6 +99,4 @@ class App extends Component {
   }
 }
 
-// Higher order component:
-// a component wrapping your component adding some extra functionality
-export default Radium(App);
+export default App;
