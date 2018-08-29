@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Person.css';
 
+// person is a function instead of a class, so we don't import or extend Component
 const person = (props) => {
   return (
     <div className="Person">

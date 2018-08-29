@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+// Component name should be capitalized because in JSX all elements starting
+// with lowercase characteres are reserved for the native HTML elements.
 import Person from './Person/Person';
 
 class App extends Component {
@@ -35,6 +37,10 @@ class App extends Component {
     this.setState({showPersons: !doesShow});
   }
 
+  // React calls this method to show something to the screen.
+  // This method has an important job - returning/rendering some html code to the DOM.
+  // You can do other things too, like reaching out to the internet, doing
+  // some calculation, listening to events etc.
   render() {
     const style = {
       backgroundColor: 'white',
