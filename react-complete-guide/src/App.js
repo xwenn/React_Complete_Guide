@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+// Tranforms the CSS code to an object that we can use
+import classes from './App.css';
 // Component name should be capitalized because in JSX all elements starting
 // with lowercase characteres are reserved for the native HTML elements.
 import Person from './Person/Person';
@@ -78,18 +79,18 @@ class App extends Component {
       style.backgroundColor = 'red';
     }
 
-    const classes = [];
+    const assignedClasses = [];
     if (this.state.persons.length <= 2) {
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
     if (this.state.persons.length <= 1) {
-      classes.push('bold');
+      assignedClasses.push(classes.bold);
     }
 
     return (
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi, I am a React App</h1>
-        <p className={classes.join(' ')}>This is really working!</p>
+        <p className={assignedClasses.join(' ')}>This is really working!</p>
         <button
           style={style}
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
