@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 // Component name should be capitalized because in JSX all elements starting
 // with lowercase characteres are reserved for the native HTML elements.
-import Radium, { StyleRoot } from 'radium';
+import Radium from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -96,16 +96,14 @@ class App extends Component {
     }
 
     return (
-      <StyleRoot>
-        <div className="App">
-          <h1>Hi, I am a React App</h1>
-          <p className={classes.join(' ')}>This is really working!</p>
-          <button
-            style={style}
-            onClick={this.togglePersonsHandler}>Toggle Persons</button>
-          {persons}
-        </div>
-      </StyleRoot>
+      <div className="App">
+        <h1>Hi, I am a React App</h1>
+        <p className={classes.join(' ')}>This is really working!</p>
+        <button
+          style={style}
+          onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        {persons}
+      </div>
     );
   }
 }
