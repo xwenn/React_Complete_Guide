@@ -17,7 +17,8 @@ class App extends Component {
     ],
     otherState: 'some other value',
     showPersons: false,
-    toggleClicked: 0
+    toggleClicked: 0,
+    authenticated: false
   }
 
   nameChangedHandler = (event, id) => {
@@ -55,6 +56,10 @@ class App extends Component {
     });
   }
 
+  loginHandler = ()  => {
+    this.setState({authenticated: true});
+  }
+
   // React calls this method to show something to the screen.
   // This method has an important job - returning/rendering some html code to the DOM.
   // You can do other things too, like reaching out to the internet, doing
@@ -66,6 +71,7 @@ class App extends Component {
       persons = <Persons
         persons={this.state.persons}
         clicked={this.deletePersonHandler}
+        isAuthenticated={this.state.authenticated}
         changed={this.nameChangedHandler} />;
     }
 
@@ -74,6 +80,7 @@ class App extends Component {
         <Cockpit
           showPersons={this.state.showPersons}
           persons={this.state.persons}
+          login={this.loginHandler}
           clicked={this.togglePersonsHandler} />
         {persons}
       </Aux>
