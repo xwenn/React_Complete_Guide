@@ -24,7 +24,6 @@ const cockpit = (props) => {
         className={btnClass}
         onClick={props.clicked}>Toggle Persons</button>
     </Aux>
-
   );
 };
 
