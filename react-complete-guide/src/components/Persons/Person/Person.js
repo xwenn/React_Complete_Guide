@@ -1,17 +1,18 @@
 import React from 'react';
 
 import classes from './Person.css';
-import WithClass from '../../../hoc/WithClass';
+import Aux from '../../../hoc/Aux';
+import withClass from '../../../hoc/withClass';
 
 // person is a function instead of a class, so we don't import or extend Component
-const person = (props) => {
+const Person = (props) => {
   return (
-    <WithClass classes={classes.Person}>
+    <Aux>
       <p onClick={props.click}>I am {props.name} and I am {props.age} years old!</p>
       <p>{props.children}</p>
       <input type="text" onChange={props.changed} value={props.name} />
-    </WithClass>
+    </Aux>
   )
 };
 
-export default person;
+export default withClass(Person, classes.Person);
